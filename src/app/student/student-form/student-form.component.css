@@ -1,0 +1,83 @@
+h2 {
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+} 
+
+/* label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+  margin-right: 10px;
+} */
+
+input,
+select {
+  width: 250px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  height: 40px;
+}
+
+.registerButton {
+  text-align: center;
+  padding: 10px;  
+  border-radius: 3px;
+  border: none;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 230px;
+}
+
+.first,
+.dobandstate,
+.genderandemail,
+.contacts,
+.faculty {
+  display: flex;
+  gap: 50px;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  transition: border-bottom-color 0.3s ease;
+}
+
+.input-wrapper input:focus {
+  border-bottom-color: #6c63ff;
+}
+
+.input-wrapper label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #999;
+  pointer-events: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}

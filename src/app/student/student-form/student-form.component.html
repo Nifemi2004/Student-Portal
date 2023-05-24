@@ -1,0 +1,164 @@
+<div>
+  <app-menubar></app-menubar>
+  <h2>Student Registration</h2>
+  <div class="form">
+    <form (ngSubmit)="submitForm()">
+      <div class="first">
+        <div class="input-wrapper">
+          <label for="name">Last Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="studentForms.lastName"
+            required
+          />
+        </div>
+        <div class="input-wrapper">
+          <label for="name">First Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="studentForms.firstName"
+            required
+          />
+        </div>
+      </div>
+      <div class="input-wrapper">
+        <label for="name">Middle Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          [(ngModel)]="studentForms.middleName"
+          required
+        />
+      </div>
+      <div class="dobandstate">
+        <div class="input-wrapper">
+          <label for="dob">Date-of-Birth:</label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            [(ngModel)]="studentForms.dateofBirth"
+            ng2-datepicker
+            required
+          />
+        </div>
+        <div class="input-wrapper">
+          <label for="name">State:</label>
+          <input
+            type="text"
+            id="state"
+            name="state"
+            [(ngModel)]="studentForms.state"
+            required
+          />
+        </div>
+      </div>
+      <div class="genderandemail">
+        <div class="input-wrapper">
+          <label for="gender">Gender:</label>
+          <select
+            id="gender"
+            name="gender"
+            [(ngModel)]="studentForms.gender"
+            required
+          >
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <!-- Add more options for different faculty -->
+          </select>
+        </div>
+        <div class="input-wrapper">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="studentForms.email"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="contacts">
+        <div class="input-wrapper">
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            [(ngModel)]="studentForms.phoneNumber"
+            required
+          />
+        </div>
+        <div class="input-wrapper">
+          <label for="name">Emergency Contact:</label>
+          <input
+            type="text"
+            id="emergencyContact"
+            name="emergencyContact"
+            [(ngModel)]="studentForms.emergencyContact"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="faculty">
+        <div class="input-wrapper">
+          <label for="faculty">Faculty:</label>
+          <select
+            id="faculty"
+            name="faculty"
+            [(ngModel)]="studentForms.faculty"
+            required
+          >
+            <option value="">Select Faculty</option>
+            <option value="Sciences">
+              Faculty of Pure and Applied Sciences
+            </option>
+            <option value="Art">Faculty of Art</option>
+            <option value=" Engineering">Faculty of Engineering</option>
+            <!-- Add more options for different faculty -->
+          </select>
+        </div>
+        <div class="input-wrapper">
+          <label for="department">Department:</label>
+          <select
+            id="department"
+            name="department"
+            [(ngModel)]="studentForms.department"
+            required
+          >
+            <option value="">Select Department</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physics">Physics</option>
+            <!-- Add more options for different departments -->
+          </select>
+        </div>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="registration-year">Registration Year:</label>
+        <select
+          id="registration-year"
+          name="registration-year"
+          [(ngModel)]="studentForms.registrationYear"
+          required
+        >
+          <option value="">Select Year of registration</option>
+          <option>2021</option>
+          <option>2022</option>
+          <option>2023</option>
+          <!-- Add more options for different year -->
+        </select>
+      </div>
+      <button type="submit" class="registerButton">Register</button>
+    </form>
+  </div>
+</div>

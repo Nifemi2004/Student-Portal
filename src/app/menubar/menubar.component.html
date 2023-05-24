@@ -1,0 +1,22 @@
+<div class="menubar">
+  <div class="left-side">
+<div class="logo">
+  <img class="imgLogo" src="../../assets/—Pngtree—university logo in flat style_8743731.png" alt="logo">
+</div>
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+  </div>
+  <div class="right-side">
+    <div>
+      <i class="pi pi-envelope message"></i>
+    </div>
+    <div>
+      <i class="pi pi-bell bell"></i>
+    </div>
+    <div>
+      <p-menu #menu [model]="items" [popup]="true"></p-menu>
+      <i class="pi pi-user user" (click)="menu.toggle($event)"></i> 
+    </div>
+  </div>
+</div>

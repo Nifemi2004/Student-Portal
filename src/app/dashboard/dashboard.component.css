@@ -1,0 +1,36 @@
+#body {
+  display: grid;
+  grid-template-columns: 0.2fr 1fr 0.2fr;
+  grid-template-rows: 0.6fr 1fr;
+  grid-template-areas:
+    "menu menu menu "
+    "none card none2";
+}
+
+#menu {
+  grid-area: menu;
+}
+
+#none {
+  grid-area: none;
+}
+
+#cards {
+  grid-area: card;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 45px;
+  gap: 60px;
+  /* grid-area:card; */
+}
+
+#none2 {
+  grid-area: none2;
+}
+
+.card {
+
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

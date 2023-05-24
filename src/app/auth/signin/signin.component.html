@@ -1,0 +1,41 @@
+<div class="signup-container">
+  <div class="card">
+    <h2 class="header">Sign-in</h2>
+    <p class="sub-header">Signin to proceed</p>
+    <form (ngSubmit)="signIn()">
+      <div class="form-group username">
+        <input
+          pInputText
+          placeholder="Username"
+          class="p-inputtext-sm"
+          type="text"
+          id="username"
+          [(ngModel)]="signInForm.username"
+          required
+          name="username"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          pInputText
+          placeholder="Password"
+          type="password"
+          class="p-inputtext-sm"
+          id="password"
+          [(ngModel)]="signInForm.password"
+          required
+          name="password"
+        />
+      </div>
+      <button type="submit" class="button">Sign-In</button>
+      <div class="rememberme">
+        <div class="radio">
+          <input type="checkbox" />
+          <label>Remember me</label>
+        </div>
+
+        <a href=""> Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+</div>

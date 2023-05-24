@@ -1,0 +1,70 @@
+<app-menubar></app-menubar>
+<div >
+  <div class="card body">
+    <p-toast></p-toast>
+    <p-table
+      #dt
+      [value]="users"
+      [rows]="10"
+      [paginator]="true"
+      [globalFilterFields]="['name']" 
+      [tableStyle]="{ 'min-width': '75rem' }"
+      [(selection)]="selectedUsers"
+      [rowHover]="true"
+      dataKey="id"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+      [showCurrentPageReport]="true"
+    >
+      <ng-template pTemplate="caption">
+        <div class="flex align-items-center justify-content-between">
+          <button
+            pButton
+            pRipple
+            label="New"
+            icon="pi pi-plus"
+            class="p-button-success mr-2"
+            (click)="openNew()"
+          ></button>
+          <!-- <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              type="text"
+              (input)="dt.filterGlobal($event.target.value, 'contains')"
+              placeholder="Search..."
+            />
+          </span> -->
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="category" style="min-width: 10rem">
+            ID <p-sortIcon field="category"></p-sortIcon>
+          </th>
+          <th pSortableColumn="price">
+            Name<p-sortIcon field="price"></p-sortIcon>
+          </th>
+          <th pSortableColumn="name" style="min-width: 15rem">
+            Email<p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th>Phone-Number</th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user>
+        <tr>
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="summary">
+        <div class="flex align-items-center justify-content-between">
+          In total there are {{ users ? users.length : 0 }} user.
+        </div>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+

@@ -1,0 +1,33 @@
+<div class="whole-sidebar card flex justify-content-center">
+  <p-sidebar [(visible)]="sidebarVisible">
+    <div class="full-card">
+      <div class="outer" (click)="openDashboard()">
+        <div class="inner">
+          <i class="pi pi-home"></i>
+          <p>Dashboard</p>
+        </div>
+        <i class="pi pi-angle-right"></i>
+      </div>
+
+      <div class="outer" (click)="openStudentRecord()">
+        <div class="inner">
+          <i class="pi pi-users"></i>
+          <p>Student Records</p>
+        </div>
+        <i class="pi pi-angle-right"></i>
+      </div>
+
+      <div class="outer" (click)="openStudentForm()">
+        <div class="inner">
+          <i class="pi pi-calendar"></i>
+          <p>Student Registration Form</p>
+        </div>
+        <i class="pi pi-angle-right"></i>
+      </div>
+    </div>
+  </p-sidebar>
+  <p-button
+    (click)="sidebarVisible = true"
+    icon="pi pi-align-justify"
+  ></p-button>
+</div>

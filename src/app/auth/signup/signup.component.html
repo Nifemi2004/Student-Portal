@@ -1,0 +1,57 @@
+<div class="signup-container">
+  <div class="card">
+    <h2 class="header">Sign-up</h2>
+    <p class="sub-header">Please submit your details to signup</p>
+    <form (ngSubmit)="signUp()">
+      <div class="form-group lastname">
+        <input
+          pInputText
+          placeholder="Last name"
+          class="p-inputtext-sm"
+          type="text"
+          id="lastname"
+          [(ngModel)]="signUpForm.lastname"
+          required
+          name="lastname"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          pInputText
+          placeholder="First name"
+          class="p-inputtext-sm"
+          type="text"
+          id="firstname"
+          [(ngModel)]="signUpForm.firstname"
+          required
+          name="firstname"
+        />
+      </div>
+      <div class="form-group">
+        <input 
+          pInputText
+          placeholder="Email"
+          class="p-inputtext-sm"
+          type="email"
+          id="email"
+          [(ngModel)]="signUpForm.email"
+          required
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          pInputText
+          placeholder="Password"
+          type="password"
+          class="p-inputtext-sm"
+          id="password"
+          [(ngModel)]="signUpForm.password"
+          required
+          name="password"
+        />
+      </div>
+      <button type="submit" class="button">Sign-Up</button>
+    </form>
+  </div>
+</div>

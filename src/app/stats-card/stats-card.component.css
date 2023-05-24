@@ -1,0 +1,28 @@
+.stats-card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  height: 130px;
+}
+
+.stats-card-header {
+  margin-bottom: 10px;
+}
+
+.stats-card-header h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.stats-card-body p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555555;
+}
+
+.stats-card-body span {
+  font-size: 14px;
+  color: #777777;
+}

@@ -1,0 +1,28 @@
+.outer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.outer:hover{
+  background-color: #B2BEB5;
+}
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.full-card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
