@@ -11,13 +11,9 @@ import { StudentModel } from 'src/app/interface/student-model';
 export class StudentFormComponent {
   studentForms!: StudentModel;
 
-  @ViewChild(StudentRecordsComponent)
-  StudentRecordsComponent!: StudentRecordsComponent;
-
   constructor(private studentRegService: StudentRegService) {}
 
   submitForm() {
     console.log(JSON.stringify(this.studentForms));
-    
   }
 }
