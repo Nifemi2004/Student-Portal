@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { StudentRegService } from 'src/app/services/student-reg.service';
+import { StudentModel } from 'src/app/interface/student-model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   providers: [MessageService, ConfirmationService],
 })
 export class StudentRecordsComponent implements OnInit {
-  users!: any;
+  students!: StudentModel ;
 
   id: number = 0;
 
@@ -40,12 +41,12 @@ export class StudentRecordsComponent implements OnInit {
   }
 
   getUsersFromService() {
-    this.studentRegService.getUsers()
+    this.studentRegService.getStudents()
     .subscribe(
       (data: any) => {
-        this.users = data;
+        this.students = data;
         console.log(data);
-        console.log(this.users);
+        console.log(this.students);
       },
       (err) => {
         console.log(err);

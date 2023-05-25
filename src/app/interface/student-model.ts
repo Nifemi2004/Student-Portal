@@ -1,15 +1,14 @@
 export interface StudentModel {
-  registrationNumber?: number;
   lastName: string;
+  middleName?: string;
   firstName: string;
-  middleName: string;
-  dateofBirth: string;
-  state: string;
-  gender: string;
-  email: string;
   phoneNumber: number;
+  state: string;
+  course: string;
+  gender: string;
   emergencyContact: number;
-  faculty?: string;
-  department: string;
+  email: string;
+  dateofBirth: string;
+  departmentId: number;
   registrationYear: number;
 }

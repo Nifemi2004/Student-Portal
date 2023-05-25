@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { loginDetails } from '../interface/login';
 import { map } from 'rxjs/operators';
+import { StudentModel } from '../interface/student-model';
 
 @Injectable({
   providedIn: 'root',
@@ -19,13 +20,13 @@ export class StudentRegService {
     this.user = this.userSubject.asObservable();
   }
 
-  getUsers(): Observable<any> {
-    return this.http.get(environment.baseUrl);
+  getStudents(): Observable<StudentModel> {
+    return this.http.get<StudentModel>(`${environment.baseUrl}/students`);
   }
 
   createUser(newUser: loginDetails): Observable<loginDetails> {
     return this.http.post<loginDetails>(
-      `${environment.baseUrl}auth/register`,
+      `${environment.baseUrl}/auth/register`,
       newUser
     );
   }
@@ -33,7 +34,7 @@ export class StudentRegService {
   login(adminDetails: loginDetails) {
     console.log(adminDetails, 30000);
     return this.http
-      .post<loginDetails>(`${environment.baseUrl}auth/login`, 
+      .post<loginDetails>(`${environment.baseUrl}/auth/login`, 
         adminDetails,
       )
       .pipe(

@@ -33,10 +33,13 @@ export class SignupComponent implements OnInit {
     if (!this.signUpForm.valid) return alert('Form is invalid.');
 
     this.studentRegService.createUser(this.signUpForm.value).subscribe(
-      (response) => console.log(response),
+      (response) => {
+        console.log(response);
+        this.signUpForm.reset();
+      },
       (error: any) => console.log(error),
       () => console.log(this.signUpForm.value)
     );
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/dashboard']);
   }
 }
