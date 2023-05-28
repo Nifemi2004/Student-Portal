@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   providers: [MessageService, ConfirmationService],
 })
 export class StudentRecordsComponent implements OnInit {
-  students!: StudentModel ;
+  students!: StudentModel[] ;
 
   id: number = 0;
 
@@ -41,19 +41,18 @@ export class StudentRecordsComponent implements OnInit {
   }
 
   getUsersFromService() {
-    this.studentRegService.getStudents()
+   return this.studentRegService.getStudents()
     .subscribe(
       (data: any) => {
+        console.log('success entered')
         this.students = data;
         console.log(data);
-        console.log(this.students);
+      
       },
       (err) => {
+        console.log('error entered')
         console.log(err);
       },
-      () => {
-        console.log('Successfully gotten the users');
-      }
     );
   }
 }

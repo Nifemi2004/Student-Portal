@@ -53,10 +53,11 @@ export class StudentFormComponent implements OnInit {
   }
 
   submitForm() {
-    if (this.pureAndAppliedScience.includes(this.f.course.value)) {
-      this.f.departmentId.setValue(1);
-    } else if (this.engineering.includes(this.f.course.value)) {
-      this.f.departmentId.setValue(2);
-    } else this.f.departmentId.setValue(3);
+    // if (this.pureAndAppliedScience.includes(this.f.course.value)) {
+    //   this.f.departmentId.setValue(1);
+    // } else if (this.engineering.includes(this.f.course.value)) {
+    //   this.f.departmentId.setValue(2);
+    // } else this.f.departmentId.setValue(3);
+    console.log(JSON.stringify(this.studentForms))
   }
 }

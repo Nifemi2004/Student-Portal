@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { StudentRegService } from '../services/student-reg.service';
 
 @Component({
   selector: 'app-menubar',
@@ -8,6 +9,8 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenubarComponent implements OnInit{
   items!: MenuItem[];
+
+  constructor(private studentRegService: StudentRegService){}
 
   ngOnInit() {
       this.items = [
@@ -24,5 +27,9 @@ export class MenubarComponent implements OnInit{
             icon: 'pi pi-fw pi-power-off',
         }
       ];
+  }
+
+  logout(){
+   this.studentRegService.logout()
   }
 }

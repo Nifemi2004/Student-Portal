@@ -3,9 +3,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http';
 import { PaginatorModule } from 'primeng/paginator';
-import { DatepickerModule } from 'ng2-datepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -25,7 +25,7 @@ import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { DialogModule } from 'primeng/dialog';
 import { ErrorComponent } from './error/error.component';
-// import { AuthCanActivateGuard } from './_guards/auth.can-activate.guard.guard';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -56,9 +56,11 @@ import { ErrorComponent } from './error/error.component';
     DialogModule,
     HttpClientModule,
     PaginatorModule,
-    DatepickerModule,
+    BsDatepickerModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

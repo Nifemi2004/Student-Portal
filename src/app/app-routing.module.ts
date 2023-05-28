@@ -5,8 +5,8 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { StudentFormComponent } from './student/student-form/student-form.component';
 import { StudentRecordsComponent } from './student/student-records/student-records.component';
-// import { ErrorComponent } from './error/error.component';
-// import { AuthCanActivateGuardGuard } from './_guards/auth.can-activate.guard.guard';
+import { ErrorComponent } from './error/error.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -20,20 +20,22 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    // canActivate: [AuthCanActivateGuardGuard]
+    canActivate: [AuthGuard],
   },
   {
     path: 'studentform',
     component: StudentFormComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'studentrecord',
     component: StudentRecordsComponent,
+    canActivate: [AuthGuard],
   },
-  // {
-  //   path: '**',
-  //   component: ErrorComponent,
-  // },
+  {
+    path: '**',
+    component: ErrorComponent,
+  },
 ];
 
 @NgModule({

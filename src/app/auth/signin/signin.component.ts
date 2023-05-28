@@ -37,6 +37,6 @@ export class SigninComponent implements OnInit {
         next: () => this.router.navigate(['/dashboard']),
         error: (error) => console.log(error),
       });
-      this.signInForm.reset();
+      // this.signInForm.reset();
   }
 }

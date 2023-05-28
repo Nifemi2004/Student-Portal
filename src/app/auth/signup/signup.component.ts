@@ -35,10 +35,10 @@ export class SignupComponent implements OnInit {
     this.studentRegService.createUser(this.signUpForm.value).subscribe(
       (response) => {
         console.log(response);
-        this.signUpForm.reset();
+        // this.signUpForm.reset();
       },
       (error: any) => console.log(error),
-      () => console.log(this.signUpForm.value)
+      // () => console.log(this.signUpForm.value)
     );
     this.router.navigate(['/dashboard']);
   }

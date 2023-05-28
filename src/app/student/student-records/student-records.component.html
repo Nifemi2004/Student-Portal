@@ -1,10 +1,10 @@
 <app-menubar></app-menubar>
 <div >
   <div class="card body">
-    <p-toast></p-toast>
+    <!-- <p-toast></p-toast>
     <p-table
       #dt
-      [value]="users"
+      [value]="students"
       [rows]="10"
       [paginator]="true"
       [globalFilterFields]="['name']" 
@@ -24,7 +24,7 @@
             icon="pi pi-plus"
             class="p-button-success mr-2"
             (click)="openNew()"
-          ></button>
+          ></button> -->
           <!-- <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input
@@ -34,12 +34,12 @@
               placeholder="Search..."
             />
           </span> -->
-        </div>
+        <!-- </div>
       </ng-template>
       <ng-template pTemplate="header">
         <tr>
           <th pSortableColumn="category" style="min-width: 10rem">
-            ID <p-sortIcon field="category"></p-sortIcon>
+            Registration Number<p-sortIcon field="category"></p-sortIcon>
           </th>
           <th pSortableColumn="price">
             Name<p-sortIcon field="price"></p-sortIcon>
@@ -48,13 +48,14 @@
             Email<p-sortIcon field="name"></p-sortIcon>
           </th>
           <th>Phone-Number</th>
-          <th></th>
+          <th> Department</th>
+          <th> Course</th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-user>
+      <ng-template pTemplate="body" let-student>
         <tr>
-          <td>{{ user.id }}</td>
-          <td>{{ user.name }}</td>
+          <td>{{ student. }}</td>
+          <td>{{student.name}}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.phone }}</td>
         </tr>
@@ -64,7 +65,7 @@
           In total there are {{ users ? users.length : 0 }} user.
         </div>
       </ng-template>
-    </p-table>
+    </p-table> -->
   </div>
 </div>
 
